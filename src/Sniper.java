@@ -5,7 +5,8 @@ public class Sniper extends Crossbowman {
         setDistance(100);
     }
     public String getInfo() {
-        String inf = ("|" + getType() + "| " + getName() + "| " + getHealth() + "| " + getDistance() + "| " + getAttack() + "| " + getDefence() + "|");
+        String inf = ("|" + getType() + "| " + getName() + "| " + getHealth() + "| " + getDistance() + "| "
+                + getAttack() + "| " + getDefence() + "|");
         return inf;
     }
 }
