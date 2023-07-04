@@ -4,36 +4,51 @@
 экземпляру каждого класса.
  */
 
+import units.*;
+
+import java.util.ArrayList;
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("____________________________________________________________________________________");
 
-        Magician magician =new Magician("Victor");
-        System.out.println(magician.getInfo());
-        System.out.println("____________________________________________________________________________________");
+        ArrayList<Units> list = new ArrayList<>();
+        list.add(new Magician(getName()));
+        list.add(new Monk(getName()));
+        list.add(new Rogue(getName()));
+        list.add(new Spearman(getName()));
+        list.add(new Sniper(getName()));
+        list.add(new Crossbowman(getName()));
+        list.add(new Peasant(getName()));
+        list.add(new Monk(getName()));
+        list.add(new Rogue(getName()));
+        list.add(new Magician(getName()));
 
-        Monk monk = new Monk("Avraam");
-        System.out.println(monk.getInfo());
-        System.out.println("____________________________________________________________________________________");
+        ArrayList<Units> list1 = new ArrayList<>();
+        list1.add(new Magician(getName()));
+        list1.add(new Monk(getName()));
+        list1.add(new Rogue(getName()));
+        list1.add(new Spearman(getName()));
+        list1.add(new Sniper(getName()));
+        list1.add(new Crossbowman(getName()));
+        list1.add(new Peasant(getName()));
+        list1.add(new Monk(getName()));
+        list1.add(new Rogue(getName()));
+        list1.add(new Magician(getName()));
 
-        Rogue rogue = new Rogue("Kosoy");
-        System.out.println(rogue.getInfo());
-        System.out.println("____________________________________________________________________________________");
+//      if (list.get(0) instanceof Crossbowman) ((Crossbowman)list.get(0)).fire();
+//      if (list.get(0) instanceof Monk) ((Monk)list.get(0)).castMana();
+        System.out.println("____________________________________________________________________________________________________");
 
-        Spearman spearman = new Spearman("Pinochet");
-        System.out.println(spearman.getInfo());
-        System.out.println("____________________________________________________________________________________");
+        list.forEach(n-> System.out.println(n.getInfo()));
+        System.out.println("____________________________________________________________________________________________________");
+        list1.forEach(n-> System.out.println(n.getInfo()));
+        System.out.println("____________________________________________________________________________________________________");
 
-        Crossbowman crossbowman = new Crossbowman("Finist");
-        System.out.println(crossbowman.getInfo());
-        System.out.println("____________________________________________________________________________________");
 
-        Sniper sniper = new Sniper("Kliment");
-        System.out.println(sniper.getInfo());
-        System.out.println("____________________________________________________________________________________");
-
-        Peasant peasant = new Peasant("Gerasim");
-        System.out.println(peasant.getInfo());
-        System.out.println("____________________________________________________________________________________");
     }
+        private static String getName(){
+        String s = String.valueOf(Name.values()[new Random().nextInt(Name.values().length)]);
+        return s;
+        }
 }
