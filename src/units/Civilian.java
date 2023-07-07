@@ -4,7 +4,7 @@ public abstract class Civilian extends Units {
 
     public String type;
 
-    public Civilian(float maxHp, int att, int def, int[] damage, String name) {
+    public Civilian(float maxHp, int att, int def, int[] damage) {
         super(maxHp, att, def, damage, name);
     }
     @Override
@@ -18,4 +18,5 @@ public abstract class Civilian extends Units {
     public String getType(String type) {
         return type;
     }
+
 }

@@ -1,10 +1,8 @@
 package units;
 
-import units.Armed;
-
 public abstract class Shooter extends Armed {
 
-    public Shooter(float maxHp, int att, int def, int[] damage, String name) {
+    public Shooter(float maxHp, int att, int def, int[] damage) {
         super(maxHp, att, def, damage, name);
     }
     public int attackDistance;

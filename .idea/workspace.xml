@@ -4,9 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d404272-779a-4eaf-898b-bc67b3fe8935" name="Changes" comment="create Units">
-      <change beforePath="$PROJECT_DIR$/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+    <list default="true" id="7d404272-779a-4eaf-898b-bc67b3fe8935" name="Changes" comment="add changes in Readme">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Name.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Name.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/units/Armed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Armed.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/units/Civilian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Civilian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/units/Crossbowman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Crossbowman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/units/Magician.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Magician.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/units/Monk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Monk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/units/Peasant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Peasant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/units/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Rogue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/units/Shooter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Shooter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/units/Sniper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Sniper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/units/Spearman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Spearman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/units/Units.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Units.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,14 +48,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -81,7 +93,28 @@
       <option name="project" value="LOCAL" />
       <updated>1688513680014</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add some Readme">
+      <created>1688514004255</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1688514004255</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add changes in main line 2">
+      <created>1688514146277</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1688514146277</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add changes in Readme">
+      <created>1688514263591</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1688514263591</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,6 +134,9 @@
     <MESSAGE value="add abstract" />
     <MESSAGE value="add stealHealth in Rogue" />
     <MESSAGE value="create Units" />
-    <option name="LAST_COMMIT_MESSAGE" value="create Units" />
+    <MESSAGE value="add some Readme" />
+    <MESSAGE value="add changes in main line 2" />
+    <MESSAGE value="add changes in Readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="add changes in Readme" />
   </component>
 </project>
