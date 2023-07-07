@@ -1,10 +1,12 @@
 /*
+Задание 1!
 Проанализировать и описать персонажей: Маг, монах, разбойник, копейщик, снайпер, арбалетчик, крестьянин.
 На базе описания персонажей описать простейшую иерархию классов. В основной программе создать по одному
 экземпляру каждого класса.
  */
 
 /*
+Задание 2!
 Добавить файл с описанием интерфейса. В котором описать два метода, void step(); и String getInfo();
 Реализовать интерфейс в абстрактном классе и в наследниках так, чтобы getInfo возвращал тип персонажа.
 Создать два списка в классе main. В каждый из списков добавить по десять случайных экземнляров
@@ -32,7 +34,7 @@ public class Main {
 //        list.add(new Rogue(getName()));
 //        list.add(new Magician(getName()));
 
-        ArrayList<Units> list1 = new ArrayList<>();
+    ArrayList<Units> list1 = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             int per = new Random().nextInt(7);
             switch (per) {
@@ -48,7 +50,7 @@ public class Main {
 //            System.out.println(list1);
 //      if (list.get(0) instanceof Crossbowman) ((Crossbowman)list.get(0)).fire();
 //      if (list.get(0) instanceof Monk) ((Monk)list.get(0)).castMana();
-    System.out.println("____________________________________________________________________________________________________");
+    System.out.println("_____________________________________Список 1______________________________________________________");
 
     list1.forEach(n -> System.out.println(n.getInfo()));
     System.out.println("______________________________________Список 2___________________________________________");
