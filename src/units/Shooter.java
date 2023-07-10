@@ -1,9 +1,11 @@
 package units;
 
+import java.util.ArrayList;
+
 public abstract class Shooter extends Armed {
 
-    public Shooter(float maxHp, int att, int def, int[] damage) {
-        super(maxHp, att, def, damage, name);
+    public Shooter(float maxHp, int att, int def, int[] damage, int x, int y) {
+        super(maxHp, att, def, damage, name, x, y);
     }
     public int attackDistance;
 
@@ -14,5 +16,10 @@ public abstract class Shooter extends Armed {
 
     public String getDistance() {
         return "Distance: " + attackDistance;
+    }
+
+    @Override
+    public void step(ArrayList<Units> units) {
+
     }
 }

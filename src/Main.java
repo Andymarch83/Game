@@ -14,6 +14,14 @@
 В main пройти по спискам и вызвать у всех персонажей getInfo.
  */
 
+/*
+Задание 3! Некоторые стандартные интерфейсы Java и примеры их использования
+Создать класс с описанием координат, x и y.
+Добавить в абстрактный класс поле с координатами и пробросить его инициализацию до конструкторов персонажей.
+Farmer farmer = new Farmer(getName(), x, y);
+Найти среди противников ближайшего и вывести расстояние до него и его имя в консоль.
+ */
+
 import units.*;
 
 import java.util.ArrayList;
@@ -36,43 +44,39 @@ public class Main {
 
     ArrayList<Units> list1 = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            int per = new Random().nextInt(7);
+            int per = new Random().nextInt(4);
             switch (per) {
-                case 0 -> list1.add(new Magician());
-                case 1 -> list1.add(new Monk());
-                case 2 -> list1.add(new Rogue());
-                case 3 -> list1.add(new Spearman());
-                case 4 -> list1.add(new Sniper());
-                case 5 -> list1.add(new Crossbowman());
-                case 6 -> list1.add(new Peasant());
+                case 0 -> list1.add(new Monk(2, per+1));
+                case 1 -> list1.add(new Rogue(4, per+1));
+                case 2 -> list1.add(new Sniper(2, per+1));
+                case 3 -> list1.add(new Peasant(0,per+1));
             }
         }
 //            System.out.println(list1);
 //      if (list.get(0) instanceof Crossbowman) ((Crossbowman)list.get(0)).fire();
 //      if (list.get(0) instanceof Monk) ((Monk)list.get(0)).castMana();
-    System.out.println("_____________________________________Список 1______________________________________________________");
+    System.out.println("_____________________________________TEAM 1______________________________________________________");
 
     list1.forEach(n -> System.out.println(n.getInfo()));
-    System.out.println("______________________________________Список 2___________________________________________");
+    System.out.println("______________________________________TEAM 2___________________________________________");
 
     ArrayList<Units> list2 = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            int per = new Random().nextInt(7);
+            int per = new Random().nextInt(4);
             switch (per) {
-                case 0 -> list2.add(new Magician());
-                case 1 -> list2.add(new Monk());
-                case 2 -> list2.add(new Rogue());
-                case 3 -> list2.add(new Spearman());
-                case 4 -> list2.add(new Sniper());
-                case 5 -> list2.add(new Crossbowman());
-                case 6 -> list2.add(new Peasant());
+                case 0 -> list2.add(new Magician(8,per+1));
+                case 1 -> list2.add(new Spearman(6,per+1));
+                case 2 -> list2.add(new Crossbowman(8,per+1));
+                case 3 -> list2.add(new Peasant(10,per+1));
             }
         }
     list2.forEach(n -> System.out.println(n.getInfo()));
     System.out.println("____________________________________________________________________________________________________");
 
-
-
+    System.out.println("______________________________________Distance line to TEAM 2________________________________");
+    list1.forEach(n -> n.step(list2));
+    System.out.println("______________________________________Distance line to TEAM 1________________________________");
+    list2.forEach(n -> n.step(list1));
     }
 
 }

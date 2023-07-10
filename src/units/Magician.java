@@ -1,19 +1,17 @@
 package units;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
 public class Magician extends Monk {
 
-    public Magician()
+    public Magician(int x, int y)
     {
-        super();
+        super(x, y);
     }
 
-    @Override
-    public void step() {
-
-    }String type = getType("Magician");
+    String type = getType("Magician");
     String name = this.getName();
 
 
@@ -30,6 +28,12 @@ public class Magician extends Monk {
     public String getName() {
         String s = String.valueOf(units.Name.values()[new Random().nextInt(units.Name.values().length)]);
         return s;
+    }
+
+    @Override
+    public void step(ArrayList<Units> units) {
+        Units tmp = nearest(units);
+        System.out.println(type + " " + tmp.getName() + " dist " + coordinates.finedDistance(tmp.coordinates));
     }
 }
 

@@ -1,22 +1,17 @@
 package units;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
 public class Peasant extends Civilian {
 
-    public Peasant() {
+    public Peasant(int x, int y) {
 
-        super(5, 2, 1, new int[]{-1, -5});
+        super(5, 2, 1, new int[]{-1, -5}, x, y);
     }
 
-
-
-    @Override
-    public void step() {
-
-    }
-    String type = getType("Peasant");
+      String type = getType("Peasant");
     String name = this.getName();
 
     @Override
@@ -32,5 +27,10 @@ public class Peasant extends Civilian {
     public String getName() {
         String s = String.valueOf(units.Name.values()[new Random().nextInt(units.Name.values().length)]);
         return s;
+    }
+    @Override
+    public void step(ArrayList<Units> units) {
+        Units tmp = nearest(units);
+        System.out.println(type + " " + tmp.getName() + " dist " + coordinates.finedDistance(tmp.coordinates));
     }
 }

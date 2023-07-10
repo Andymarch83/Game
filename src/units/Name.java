@@ -1,5 +1,5 @@
 package units;
 
 public enum Name {
-    Елена, Ольга, Екатерина, Сергей, Андрей, Роман, Василий, Ирина, Максим, Николай, Жанна;
+    Helen, Helga, Katrin, Serge, Andrew, Romario, Basilian, Ingrid, Maximus, Klaus, Janna;
 }

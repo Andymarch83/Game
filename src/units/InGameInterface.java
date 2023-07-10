@@ -1,7 +1,10 @@
 package units;
 
+import java.util.ArrayList;
+
 public interface InGameInterface {
-    void step();
+
     String getInfo();
 
+    void step(ArrayList<Units> units);
 }
