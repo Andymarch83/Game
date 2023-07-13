@@ -4,17 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d404272-779a-4eaf-898b-bc67b3fe8935" name="Changes" comment="changed coments">
-      <change afterPath="$PROJECT_DIR$/src/units/Coordinates.java" afterDir="false" />
+    <list default="true" id="7d404272-779a-4eaf-898b-bc67b3fe8935" name="Changes" comment="home 4">
+      <change afterPath="$PROJECT_DIR$/src/AnsiColors.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/View.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/units/Armed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Armed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/units/Civilian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Civilian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/units/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Coordinates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/units/Crossbowman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Crossbowman.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/units/InGameInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/InGameInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/units/Magician.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Magician.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/units/Monk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Monk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/units/Name.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Name.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/units/Peasant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Peasant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/units/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Rogue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/units/Shooter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Shooter.java" afterDir="false" />
@@ -130,7 +131,28 @@
       <option name="project" value="LOCAL" />
       <updated>1688747601670</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added distances">
+      <created>1689007823471</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1689007823471</updated>
+    </task>
+    <task id="LOCAL-00011" summary="changes in Readme">
+      <created>1689007983535</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1689007983535</updated>
+    </task>
+    <task id="LOCAL-00012" summary="home 4">
+      <created>1689271752509</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1689271752509</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -155,6 +177,9 @@
     <MESSAGE value="add changes in Readme" />
     <MESSAGE value="change to random units and names" />
     <MESSAGE value="changed coments" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed coments" />
+    <MESSAGE value="added distances" />
+    <MESSAGE value="changes in Readme" />
+    <MESSAGE value="home 4" />
+    <option name="LAST_COMMIT_MESSAGE" value="home 4" />
   </component>
 </project>

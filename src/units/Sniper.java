@@ -1,38 +1,17 @@
 package units;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
 
-public class Sniper extends Crossbowman {
+public class Sniper extends Shooter {
 
 
-    public Sniper(int x, int y) {
-        super(x, y);
+    public Sniper(int x, int y, int initiative) {
+        super(x, y, initiative + 3, 7, 100, 1);
     }
-    String type = getType("Sniper");
-    String name = this.getName();
-
-
-
     @Override
     public String getInfo() {
-
-        String inf = ("Class: " + type + " | " + "units.Name :" + name + " | "
-                + "Health: " + maxHp + " | " + "Attack: "
-                + att + " | " + "Defence: " + def + " | " + "Damage: " + Arrays.toString(damage) + " |");
-        return inf;
+        return "Sniper [" + coordinates.x + ", " + coordinates.y + "] HP: " + hp + "/" + max_hp + " " + state;
     }
 
-    @Override
-    public String getName() {
-        String s = String.valueOf(units.Name.values()[new Random().nextInt(units.Name.values().length)]);
-        return s;
-    }
 
-    @Override
-    public void step(ArrayList<Units> units) {
-        Units tmp = nearest(units);
-        System.out.println(type + " " + tmp.getName() + " dist " + coordinates.finedDistance(tmp.coordinates));
-    }
 }

@@ -1,46 +1,59 @@
 package units;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public abstract class Units implements InGameInterface{
-    protected float maxHp, curHp;
-    protected int att, def;
-    protected int[] damage;
-    protected static String name;
+    public int initiative = new Random().nextInt(21);
+    public int damage, hp, max_hp, moveDistance;;
+    public boolean isAlive;
+    public String state;
     Coordinates coordinates;
 
 
-    public Units(float maxHp, int att, int def, int[] damage, String name, int x, int y) {
-        this.maxHp = this.curHp = maxHp;
-        this.att = att;
-        this.def = def;
+    public Units(int x, int y, int hp, int max_hp, int damage, int moveDistance, int initiative, boolean isAlive) {
         this.damage = damage;
-        this.name = getName();
+        this.hp = hp;
+        this.max_hp = max_hp;
+        this.state = "Stand";
         coordinates = new Coordinates(x, y);
+        this.initiative = initiative;
+        this.isAlive = isAlive;
+        this.moveDistance = moveDistance;
+    }
+
+    public ArrayList<Integer> getCoords() {
+        return coordinates.xy;
+    }
+
+    public void move(Coordinates targetPosition, ArrayList<Units> mag) {
+        if (!coordinates.containsByPos(coordinates.newPosition(targetPosition, mag), mag)) {
+            for (int i = 0; i < moveDistance; i++) {
+                coordinates = coordinates.newPosition(targetPosition, mag);
             }
-    public void getDamage(float damage){
-        curHp -= damage;
+        }
     }
-
-    public String getName(){
-        String s = String.valueOf(units.Name.values()[new Random().nextInt(units.Name.values().length)]);
-        return s;
-    }
-
-    public Units nearest(ArrayList<Units> units){
-        double nearestDistance = Double.MAX_VALUE;
+    public Units nearest(ArrayList<Units> units) {
+        double minDistance = Double.MAX_VALUE;
         Units nearestEnemy = null;
         for (int i = 0; i < units.size(); i++) {
-            if (coordinates.finedDistance(units.get(i).coordinates) < nearestDistance) {
+            if (coordinates.finedDistance(units.get(i).coordinates) < minDistance && units.get(i).isAlive) {
                 nearestEnemy = units.get(i);
-                nearestDistance = coordinates.finedDistance(units.get(i).coordinates);
+                minDistance = coordinates.finedDistance(units.get(i).coordinates);
             }
         }
         return nearestEnemy;
     }
 
-
-
+    public void getDamage(int damage) {
+        hp -= damage;
+        if (hp <= 0) {
+            hp = 0;
+            isAlive = false;
+            state = "Dead";
+        }
+        if (hp > max_hp) hp = max_hp;
+    }
 
 }

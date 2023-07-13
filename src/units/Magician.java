@@ -1,39 +1,43 @@
 package units;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
-public class Magician extends Monk {
+public class Magician extends Civilian {
 
-    public Magician(int x, int y)
-    {
-        super(x, y);
+    public Magician(int x, int y, int initiative, int actionPriority) {
+        super(x ,y, initiative + 2, 100, 10, 3, actionPriority, true);
     }
-
-    String type = getType("Magician");
-    String name = this.getName();
-
 
     @Override
     public String getInfo() {
-
-        String inf = ("Class: " + type + " | " + "units.Name :" + name + " | "
-                + "Health: " + maxHp + " | " + "Attack: "
-                + att + " | " + "Defence: " + def + " | " + "Damage: " + Arrays.toString(damage) + " |");
-        return inf;
+        return "Magician [" + coordinates.x + ", " + coordinates.y + "] mana: " + mana + "/" + 10 + " HP: " + hp + "/" + max_hp + " " + state;
     }
 
     @Override
-    public String getName() {
-        String s = String.valueOf(units.Name.values()[new Random().nextInt(units.Name.values().length)]);
-        return s;
+    public void step(ArrayList<Units> civ, ArrayList<Units> mag) {
+        super.step(civ, mag);
+        ArrayList<Units> deadTeammates = new ArrayList<>();
+        Units tmpAlly = mag.get(0);
+
+        if (!isAlive) return;
+
+        for (Units units: mag) {
+            if (!units.isAlive) {
+                deadTeammates.add(units);
+            }
+        }
+        if (deadTeammates.size() > mag.size() / 2 - 1 && mana >= 5) {
+            int rand = new Random().nextInt(deadTeammates.size() - 1);
+
+            deadTeammates.get(rand).isAlive = true;
+            deadTeammates.get(rand).hp = deadTeammates.get(rand).max_hp / 2;
+            tmpAlly.state = "Revived";
+            state = "Revive";
+            mana = 0;
+            return;
+        }
     }
 
-    @Override
-    public void step(ArrayList<Units> units) {
-        Units tmp = nearest(units);
-        System.out.println(type + " " + tmp.getName() + " dist " + coordinates.finedDistance(tmp.coordinates));
-    }
 }
 

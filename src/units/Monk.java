@@ -1,43 +1,40 @@
 package units;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
 
 public class Monk extends Civilian {
     public int mana = 10;
 
-    public Monk(int x, int y) {
-        super(12, 4, 3, new int[]{-1, -3}, x, y);
+    public Monk(int x, int y, int initiative, int actionPriority) {
+        super(x, y, initiative + 2, 10, 5, 2, actionPriority, true);
     }
-    public  void  castMana(){}
-
-
-
-
-    String type = getType("Monk");
-    String name = this.getName();
-
 
     @Override
     public String getInfo() {
-
-        String inf = ("Class: " + type + " | " + "units.Name :" + name + " | "
-                + "Health: " + maxHp + " | " + "Attack: "
-                + att + " | " + "Defence: " + def + " | " + "Damage: " + Arrays.toString(damage) + " |");
-        return inf;
+        return "Monk [" + coordinates.x + ", " + coordinates.y + "] mana: " + mana + "/" + 10 + " HP: " + hp + "/" + max_hp + " " + state;
     }
 
     @Override
-    public String getName() {
-        String s = String.valueOf(units.Name.values()[new Random().nextInt(units.Name.values().length)]);
-        return s;
-    }
+    public void step(ArrayList<Units> civ, ArrayList<Units> mag) {
+        super.step(civ, mag);
+        Units tmpAlly = mag.get(0);
+        double minAllyHealth = 1;
 
-    @Override
-    public void step(ArrayList<Units> units) {
-        Units tmp = nearest(units);
-        System.out.println(type + " " +  tmp.getName() + " dist " + coordinates.finedDistance(tmp.coordinates));
+        if (!isAlive) return;
+
+        for (Units units: mag) {
+            if (units.hp / units.max_hp < minAllyHealth && units.isAlive) {
+                minAllyHealth = units.hp / units.max_hp;
+                tmpAlly = units;
+            }
+        }
+        if (minAllyHealth < 1 && mana > 0) {
+            tmpAlly.getDamage(-damage);
+            mana -= 1;
+            state = "Healing";
+
+            return;
+        }
     }
 }
 
