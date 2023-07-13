@@ -1,14 +1,12 @@
 package units;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
 
 public class Monk extends Civilian {
     public int mana = 10;
 
     public Monk(int x, int y) {
-        super(12, 4, 3, new int[]{-1, -3}, x, y);
+        super(12, 4, 3, -3, x, y);
     }
     public  void  castMana(){}
 
@@ -17,27 +15,35 @@ public class Monk extends Civilian {
 
     String type = getType("Monk");
     String name = this.getName();
+    int cure = 2;
 
+    public void getCure(int cure){
+        if (this.curHp != 0 && this.curHp + cure < maxHp) {
+            this.curHp += cure;
+        }
+        else {
+            if (this.curHp == 0) {
+                this.curHp = 0;
+            } else {
+                this.curHp = maxHp;
+            }
+        }
+    }
 
     @Override
     public String getInfo() {
 
-        String inf = ("Class: " + type + " | " + "units.Name :" + name + " | "
+        return ("Class: " + type + " | " + "Name :" + name + " | "
                 + "Health: " + maxHp + " | " + "Attack: "
-                + att + " | " + "Defence: " + def + " | " + "Damage: " + Arrays.toString(damage) + " |");
-        return inf;
+                + att + " | " + "Defence: " + def + " | " + "Damage: " + damage + " |");
     }
 
-    @Override
-    public String getName() {
-        String s = String.valueOf(units.Name.values()[new Random().nextInt(units.Name.values().length)]);
-        return s;
-    }
+
 
     @Override
-    public void step(ArrayList<Units> units) {
-        Units tmp = nearest(units);
-        System.out.println(type + " " +  tmp.getName() + " dist " + coordinates.finedDistance(tmp.coordinates));
+    public void step(ArrayList<Units> team1, ArrayList<Units> team2) {
+        Units tmp = nearest(team1);
+        System.out.println(type + " " + tmp.getName() + " dist " + coordinates.finedDistance(tmp.coordinates));
     }
 }
 

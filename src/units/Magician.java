@@ -1,8 +1,6 @@
 package units;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
 
 public class Magician extends Monk {
 
@@ -13,26 +11,20 @@ public class Magician extends Monk {
 
     String type = getType("Magician");
     String name = this.getName();
+    int cure = 2;
 
 
     @Override
     public String getInfo() {
 
-        String inf = ("Class: " + type + " | " + "units.Name :" + name + " | "
+        return ("Class: " + type + " | " + "Name :" + name + " | "
                 + "Health: " + maxHp + " | " + "Attack: "
-                + att + " | " + "Defence: " + def + " | " + "Damage: " + Arrays.toString(damage) + " |");
-        return inf;
+                + att + " | " + "Defence: " + def + " | " + "Damage: " + damage + " |");
     }
 
     @Override
-    public String getName() {
-        String s = String.valueOf(units.Name.values()[new Random().nextInt(units.Name.values().length)]);
-        return s;
-    }
-
-    @Override
-    public void step(ArrayList<Units> units) {
-        Units tmp = nearest(units);
+    public void step(ArrayList<Units> team1, ArrayList<Units> team2) {
+        Units tmp = nearest(team1);
         System.out.println(type + " " + tmp.getName() + " dist " + coordinates.finedDistance(tmp.coordinates));
     }
 }
