@@ -1,17 +1,19 @@
 package units;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Random;
 
 public class Magician extends Civilian {
+    public String klas = "Magician";
 
-    public Magician(int x, int y, int initiative, int actionPriority) {
-        super(x ,y, initiative + 2, 100, 10, 3, actionPriority, true);
+    public Magician(int x, int y, int initiative, int actionPriority, String name) {
+        super(x ,y, initiative + 2, 100, 10, 3, actionPriority, true, name);
     }
 
     @Override
     public String getInfo() {
-        return "Magician [" + coordinates.x + ", " + coordinates.y + "] mana: " + mana + "/" + 10 + " HP: " + hp + "/" + max_hp + " " + state;
+        return this.klas + " " + this.name + " [" + coordinates.x + ", " + coordinates.y + "] mana: " + mana + "/" + 100 + " HP: " + hp + "/" + max_hp + " " + state;
     }
 
     @Override
@@ -20,11 +22,13 @@ public class Magician extends Civilian {
         ArrayList<Units> deadTeammates = new ArrayList<>();
         Units tmpAlly = mag.get(0);
 
-        if (!isAlive) return;
+        if (!isAlive)  {
+            state = "Dead";
+            return ;}
 
-        for (Units units: mag) {
-            if (!units.isAlive) {
-                deadTeammates.add(units);
+        for (Units unit: mag) {
+            if (!unit.isAlive) {
+                deadTeammates.add(unit);
             }
         }
         if (deadTeammates.size() > mag.size() / 2 - 1 && mana >= 5) {
@@ -37,6 +41,8 @@ public class Magician extends Civilian {
             mana = 0;
             return;
         }
+
+
     }
 
 }

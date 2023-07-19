@@ -15,17 +15,56 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Crossbowman extends Shooter {
-    public Crossbowman(int x, int y, int initiative) {
-        super(x, y, initiative + 3, 5, 20, 0);
+    public int arrows = shots;
+    public Crossbowman(int x, int y, int initiative, String name) {
+        super(x, y, initiative + 3, 5, 20, 0, name);
     }
 
     @Override
     public String getInfo() {
-        return "Archer [" + coordinates.x + ", " + coordinates.y + "] arrows: " + arrows + " HP: " + hp + "/" + max_hp + " " + state;
+        return "Crossbowman" + " " + name +  " [" + coordinates.x + ", " + coordinates.y + "] arrows: " +
+                arrows + " HP: " + hp + "/" + max_hp + " " + state + " ";
     }
 
+    @Override
+    public void step(ArrayList<Units> civ, ArrayList<Units> mag) {
+        Units tmp = nearest(civ);
 
+            if (isAlive) {
+                for (Units unit : civ) {
+                    if (unit instanceof Peasant && unit.state == "Stand" && arrows < 20) {
+                        arrows += 1;
+                        unit.state = " Busy ";
+                        System.out.println(getInfo() + " get arrows from: " + unit.getInfo() + " distance " +
+                                (int) coordinates.finedDistance(unit.coordinates));
+//                        return;
+                    }
+                }
+
+                if ((int) coordinates.finedDistance(tmp.coordinates) <= attackRange) {
+                    if (arrows > 0 && attackRange != 1) {
+                        if (attackRange == 1) tmp.getDamage(1);
+                        else tmp.getDamage(damage);
+                        arrows -= 1;
+                        state = " Attack ";
+                        System.out.println(getInfo() + "Attacking " + tmp.getInfo() + " distance " +
+                                (int) coordinates.finedDistance(tmp.coordinates));
+                    } else {
+                        attackRange = 1;
+                        state = " ->Melee ";
+                        System.out.println(getInfo() + "->Melee " + tmp.getInfo() + " distance " +
+                                (int) coordinates.finedDistance(tmp.coordinates));
+                    }
+                } else {
+                    move(tmp.coordinates, civ);
+                    state = " Moving ";
+                    System.out.println(getInfo() + "Moving " + tmp.getInfo() + " distance " +
+                            (int) coordinates.finedDistance(tmp.coordinates));
+                }
+            }
+    }
 }
+
 
 
 
