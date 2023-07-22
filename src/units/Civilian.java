@@ -26,11 +26,9 @@ public abstract class Civilian extends Units {
 
     @Override
     public void step(ArrayList<Units> civ, ArrayList<Units> mag) {
-        if (!isAlive) {
-            state = "Dead";
-            return ;
-        }
+
         Units tmp = nearest(civ);
+
         if ((int) coordinates.finedDistance(tmp.coordinates) <= attackRange) {
             if (mana > 0) {
                 tmp.getDamage((damage));

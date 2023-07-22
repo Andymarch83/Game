@@ -18,6 +18,9 @@ public class Peasant extends Civilian {
 
     @Override
     public void step(ArrayList<Units> civ, ArrayList<Units> mag) {
+        if (!isAlive)
+            return;
+
         if (isAlive) {
             if (Objects.equals(state, "Busy")) {
                 state = "Stand";

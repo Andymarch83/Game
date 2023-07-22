@@ -28,6 +28,9 @@ public class Crossbowman extends Shooter {
 
     @Override
     public void step(ArrayList<Units> civ, ArrayList<Units> mag) {
+
+        if (!isAlive) return;
+
         Units tmp = nearest(civ);
 
             if (isAlive) {

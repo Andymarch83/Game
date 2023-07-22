@@ -17,5 +17,8 @@ public class Sniper extends Shooter {
                 shots + "  HP: " + hp + "/" + max_hp + " " + state + " ";
     }
 
-
+    @Override
+    public void step(ArrayList<Units> civ, ArrayList<Units> mag) {
+        super.step(civ, mag);
+    }
 }

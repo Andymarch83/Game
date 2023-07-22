@@ -17,7 +17,7 @@ public class Coordinates {
         int dy = coordinates.y - y;
         return Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
     }
-    public Coordinates newPosition(Coordinates targetPosition, ArrayList<Units> units) {
+    public Coordinates newPosition(Coordinates targetPosition, ArrayList<Units> mag) {
         Coordinates currentPos = new Coordinates(x, y);
 
         // if X <
@@ -34,9 +34,9 @@ public class Coordinates {
         return currentPos;
     }
 
-    public boolean containsByPos(Coordinates nextPosition, ArrayList<Units> units) {
-        for (Units units1: units) {
-            if (units1.coordinates == nextPosition) return true;
+    public boolean containsByPos(Coordinates nextPosition, ArrayList<Units> mag) {
+        for (Units units: mag) {
+            if (units.coordinates == nextPosition) return true;
         }
         return false;
     }

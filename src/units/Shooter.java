@@ -2,7 +2,7 @@ package units;
 
 import java.util.ArrayList;
 
-public abstract class Shooter extends Civilian {protected int shots, attackRange, timeToLoad;
+public abstract class Shooter extends Units {protected int shots, attackRange, timeToLoad;
 
     public Shooter(int x, int y, int initiative, int attackRange, int shots, int timeToLoad, String name) {
         super(x, y, 50, 50, 5, 1, initiative, true, name);
@@ -18,12 +18,14 @@ public abstract class Shooter extends Civilian {protected int shots, attackRange
 
     @Override
     public void step(ArrayList<Units> civ, ArrayList<Units> mag) {
+        if (!isAlive) return;
 
-        if (!isAlive) {
-            state = "Dead";
-            return ;
-        }
         Units tmp = nearest(civ);
+
+//        if (!isAlive) {
+//            state = "Dead";
+//            return ;
+//        }
 
         if (isAlive) {
             for (Units unit : civ) {
@@ -42,7 +44,7 @@ public abstract class Shooter extends Civilian {protected int shots, attackRange
                     else tmp.getDamage(damage);
                     shots -= 1;
                     state = " Attack ";
-                    System.out.println(getInfo() + "Attacking " + tmp.getInfo() + " distance " +
+                    System.out.println(getInfo() + tmp.getInfo() + " distance " +
                             (int) coordinates.finedDistance(tmp.coordinates));
                 } else {
                     attackRange = 1;
@@ -51,17 +53,15 @@ public abstract class Shooter extends Civilian {protected int shots, attackRange
                             (int) coordinates.finedDistance(tmp.coordinates));
                 }
             } else {
-                move(tmp.coordinates, civ);
+                move(tmp.coordinates, mag);
                 state = " Moving ";
                 System.out.println(getInfo() + " " + state + " " + tmp.getInfo() + " distance " +
                         (int) coordinates.finedDistance(tmp.coordinates));
+                return;
             }
         }
+        return;
     }
-
-
-
-
 }
 
 

@@ -20,15 +20,14 @@ public class Magician extends Civilian {
     public void step(ArrayList<Units> civ, ArrayList<Units> mag) {
         super.step(civ, mag);
         ArrayList<Units> deadTeammates = new ArrayList<>();
-        Units tmpAlly = mag.get(0);
+        Units tmpMag = mag.get(0);
 
         if (!isAlive)  {
-            state = "Dead";
             return ;}
 
-        for (Units unit: mag) {
-            if (!unit.isAlive) {
-                deadTeammates.add(unit);
+        for (Units units: mag) {
+            if (!units.isAlive) {
+                deadTeammates.add(units);
             }
         }
         if (deadTeammates.size() > mag.size() / 2 - 1 && mana >= 5) {
@@ -36,7 +35,7 @@ public class Magician extends Civilian {
 
             deadTeammates.get(rand).isAlive = true;
             deadTeammates.get(rand).hp = deadTeammates.get(rand).max_hp / 2;
-            tmpAlly.state = "Revived";
+            tmpMag.state = "Revived";
             state = "Revive";
             mana = 0;
             return;

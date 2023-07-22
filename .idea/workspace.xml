@@ -4,21 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d404272-779a-4eaf-898b-bc67b3fe8935" name="Changes" comment="home 5">
+    <list default="true" id="7d404272-779a-4eaf-898b-bc67b3fe8935" name="Changes" comment="home 5 Added View and Readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/units/Armed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Armed.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/units/Civilian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Civilian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/units/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Coordinates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/units/Crossbowman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Crossbowman.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/units/Magician.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Magician.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/units/Monk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Monk.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/units/Peasant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Peasant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/units/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Rogue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/units/Shooter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Shooter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/units/Sniper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Sniper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/units/Spearman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Spearman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/units/Units.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/units/Units.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +31,12 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -164,7 +166,21 @@
       <option name="project" value="LOCAL" />
       <updated>1689643393743</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="home 5 Added View">
+      <created>1689791586293</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1689791586293</updated>
+    </task>
+    <task id="LOCAL-00016" summary="home 5 Added View and Readme">
+      <created>1689791768439</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1689791768439</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -193,7 +209,9 @@
     <MESSAGE value="changes in Readme" />
     <MESSAGE value="home 4" />
     <MESSAGE value="home 5" />
-    <option name="LAST_COMMIT_MESSAGE" value="home 5" />
+    <MESSAGE value="home 5 Added View" />
+    <MESSAGE value="home 5 Added View and Readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="home 5 Added View and Readme" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">

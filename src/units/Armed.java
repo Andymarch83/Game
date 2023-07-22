@@ -5,6 +5,7 @@ import java.util.Objects;
 
 public abstract class Armed extends Units {
     protected int attacksAmount, attackRange;
+
     public Armed(int x, int y, int initiative, int damage, int moveDistance, int attacksAmount, int attackRange, String name) {
         super(x, y, 100, 100, damage, moveDistance, initiative, true, name);
         this.attacksAmount = attacksAmount;
@@ -20,7 +21,6 @@ public abstract class Armed extends Units {
     @Override
     public void step(ArrayList<Units> civ, ArrayList<Units> mag) {
         if (!isAlive) {
-            state = "Dead";
             return ;
         }
 
